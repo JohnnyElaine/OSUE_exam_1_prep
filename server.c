@@ -77,7 +77,7 @@ void handle_request(){
         shm[i] = reverse[i];
     }
 
-    if (sem_post(sem_response)){
+    if (sem_post(sem_response) == -1){
         print_err("server: sem_post(sem_response)");
     }
 }
